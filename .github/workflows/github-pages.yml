@@ -1,0 +1,17 @@
+name: Build and deploy CH documentation site to GitHub Pages
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  github-pages:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - uses: jenkey2011/vuepress-deploy@master
+        env:
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          BUILD_SCRIPT: yarn && yarn build
+          BUILD_DIR: docs/.vuepress/dist/
