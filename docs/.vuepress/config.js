@@ -1,4 +1,5 @@
 module.exports = {
+    base: '/poc-documentation2/',
     title: 'Connect Holland Documentation',
     themeConfig: {
         sidebar: {
